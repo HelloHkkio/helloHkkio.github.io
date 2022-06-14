@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Impassable.io</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<style>
+    body li,body button{
+        cursor: pointer;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #page-header{
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+        /*background-color: black;*/
+    }
+    #header-right ul li{
+        float: left;
+        display: block;
+        width: 105px;
+        height: 50px;
+        /*background-color: red;*/
+        font-size:16px;
+        font-family: 幼圆;
+        line-height: 50px;
+        text-align: center;
+        /*font-weight: bolder;*/
+        user-select: none;
+    }
+    #header-right button{
+        background-color: skyblue;
+        width: 100%;
+        height:100%;
+        font-size:20px;
+        font-family: 幼圆;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bolder;
+        user-select: none;
+        border: none;
+        background-color: orange;
+        border-radius: 10px;
+        /*margin-bottom: 10px;*/
+    }
+    #header-right button:hover{
+        background-color: whitesmoke;
+        color: steelblue;
+    }
+    #header-right a{
+        color: white;
+        text-decoration: none;
+    }
+    #header-right ul li:hover a{
+        color: orange;
+        /*text-decoration: underline;*/
+        border-bottom: orange 2px solid;
+        padding-bottom: 6px;
+    }
+    #header-right ul li:hover ul  a{
+        color:black;
+        border: none;
+    }
+    #header-right ul li:hover ul  a:hover{
+        color: orange;
+    }
+
+    /*#header-right li:hover a:after{*/
+    /*    content: '';*/
+    /*    position: absolute;*/
+    /*    width: 1%;*/
+    /*    left: 80%;*/
+    /*    top: 20%;*/
+    /*    height: 1px;*/
+    /*    background-color: orange;*/
+    /*}*/
+
+    #header-right ul li ul{
+        display: none;
+    }
+    #header-right ul li ul li ul li{
+        margin-top: 10px;
+        height: 20px;
+    }
+    #header-right ul li ul li ul li a{
+        font-size: 15px;
+        color: black;
+        font-weight: lighter;
+    }
+    #header-right ul li ul li ul{
+        display: block;
+        width: 150px;
+        /*height:120px;*/
+        border-radius: 9px;
+        background-color: white;
+        position: relative;
+        margin-top: -40px;
+    }
+    #header-right ul li:hover ul{
+        display: block;
+    }
+    body{
+        z-index: -1;
+    }
+    .bgAni{
+        -webkit-animation:text 10s infinite;
+    }
+
+    @-webkit-keyframes text {
+        0%{
+            /*background-size: 100%;*/
+            /*background-color: red;*/
+            /*opacity: 100%;*/
+            width: 100%;
+            height: 100%;
+        }
+        100%{
+        /*background-size: 105%;*/
+            /*opacity:80%;*/
+            /*background-color: skyblue;*/
+            width: 107%;
+            height: 107%;
+        }
+    }
+
+
+    #toggleImg ul li{
+        float: left;
+        display: block;
+        position: absolute;
+    }
+
+
+    #content{
+        position: relative;
+        left: 0px;
+        top: -800px;
+    }
+
+    #downGame{
+        width: 150px;
+        height:60px;
+        border:none;
+        border-radius: 10px;
+        position: relative;
+        top: 500px;
+        left: 100px;
+        font-size: 20px;
+        letter-spacing: 5px;
+        font-family: 幼圆;
+    }
+    #downGame:hover{
+        background-color: orange;
+        /*transform: rotate(5deg);*/
+        width: 165px;
+        height: 66px;
+        letter-spacing: 10px;
+        font-size: 22px;
+    }
+    #aboutGame{
+        position: relative;
+        top: -20px;
+        left: 100px;
+        width: 500px;
+        height: 200px;
+        /*background-color: orange;*/
+    }
+    #aboutGame h1{
+        color: white;
+        font-size:39px;
+        height: 90px;
+        font-family: "微软雅黑";
+    }
+    #aboutGame ul li{
+        color: white;
+        height: 70px;
+        font-size: 20px;
+        font-family: 幼圆;
+    }
+    #configGame{
+        position: absolute;
+        top: 565px;
+        left:1150px;
+        width: 360px;
+        height: 200px;
+        color: darkgray;
+        font-size: 10px;
+    }
+</style>
+<body style="overflow: hidden;">
+<div id="toggleImg" style="width: 100%;height:800px;position: relative">
+    <ul>
+        <li><img src="image/1.png" width="100%" height="100%"></li>
+        <li><img src="image/2.png" width="100%" height="100%"></li>
+        <li><img src="image/3.png" width="100%" height="100%"></li>
+        <li><img src="image/4.png" width="100%" height="100%"></li>
+        <li><img src="image/5.png" width="100%" height="100%"></li>
+    </ul>
+</div>
+
+<div id="content">
+<div id="page-header">
+    <div id="header-left" style="float: left;margin-left: 100px">
+        <img src="Hi_Kk.png" width="150px" height="100%" style="cursor: pointer">
+    </div>
+<div id="header-right">
+    <ul style="margin-left: 65%">
+        <li><a href="javascript:;" style="border-bottom: orange 2px solid;padding-bottom: 6px;">首页</a></li>
+        <li><a href="#">免费游戏<i class="fa fa-angle-down" style="font-size: 20px;margin-left: 10px"></i></a>
+            <ul>
+                <li style="height: 15px;"><i class="fa fa-sort-asc" style="font-size: 45px;color: white"></i>
+                    <ul>
+                        <li><a href="https://pan.baidu.com/s/1CDeE-8pKzik0ZlLIKv0RZQ?pwd=riox" target="_blank">`不可逾越`</a></li>
+                        <li><a href="log.html">更新日志</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li style="width: 30px;font-size: 39px;margin-left: 25px;color: white;cursor: text">|</li>
+        <li><a href="#">登录</a></li>
+        <li><button>注册</button></li>
+    </ul>
+</div>
+</div>
+    <div id="centers">
+        <button id="downGame">下载游戏</button>
+        <div id="aboutGame">
+            <h1>关于游戏:</h1>
+            <ul>
+                <li>Demo由虚幻5纯蓝图开发,周期为三个月!目前仅为开发测试版!!!(更多内容开发中).</li>
+                <li>由于仅为大二UE小白一个人,第一个练习Demo,精力时间有限(场景,美术,音效,UI, 程序)均为开源!</li>
+                <li>个人开发,流程较短(第二章内容构思中),BUG超多!!!再次强调测试版!</li>
+                <li>所有工程均开源!!!所有工程均开源!!!所有工程均开源!!!</li>
+                <li>要是有不嫌弃的大佬愿意加入,一起开发完善。</li>
+            </ul>
+        </div>
+        <div id="configGame">
+            <h2>游戏配置需求</h2>
+            <p>操作系统：64-BIT WINDOWS 10 OR WINDOWS 11
+                <br>
+                CPU：CORE I7 4770K @ 3.5GHZ OR AMD RYZEN 5 2600
+                <br>
+                内存：8GB RAM
+                <br>
+                显卡：NVIDIA GTX 1060 OR AMD RX 5500 XT (VRAM 6 GB OR HIGHER)(High60FPS)
+                <br>
+                存储空间：需要 4GB 可用空间
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+
+    //设置#header-right ul li ul li ul的height属性可变；
+    var chirdLi = $("#header-right ul li ul li ul").find("li");
+    $("#header-right ul li ul li ul").css("height",60+chirdLi.length*20+"px");
+
+
+    var img=$("#toggleImg ul li img");
+    var index=0;
+    function ani() {
+        index++;
+        img.removeClass("bgAni");
+        index=index%5;
+        $("#toggleImg ul li").hide();
+        $("#toggleImg ul").find("li:eq("+index+")").show();
+        img.addClass("bgAni");
+    }
+    ani();
+    setInterval(function () {
+        index++;
+        img.removeClass("bgAni");
+        index=index%5;
+        $("#toggleImg ul li").fadeOut(3000);
+        $("#toggleImg ul").find("li:eq("+index+")").fadeIn(1000);
+        img.addClass("bgAni");
+    },5000);
+
+
+    // 按钮旋转动画
+    var btn=document.getElementById("downGame");
+    var count=0;
+    var sI1;
+    var sI2;
+    $("#downGame").mouseover(function () {
+        sI2=setTimeout(function () {
+            sI1=setInterval(function () {
+                if (count<=7) {
+                    count++;
+                    btn.style.transform = "rotate(" + count + "deg)";
+                }
+            },30)
+        },100)
+    })
+    $("#downGame").mouseout(function () {
+        clearInterval(sI1);
+        clearTimeout(sI2)
+        count=0;
+        btn.style.transform = "rotate(0deg)";
+    })
+
+
+    $("#downGame").click(function () {
+        window.location.href="https://pan.baidu.com/s/1CDeE-8pKzik0ZlLIKv0RZQ?pwd=riox";
+    })
+
+    $("#header-left").click(function () {
+        window.location.reload();
+    })
+
+</script>
+</html>
